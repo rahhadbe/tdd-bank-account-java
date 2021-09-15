@@ -30,4 +30,11 @@ public class AccountTest {
 
         assertThat(balance_after).isGreaterThan(balance_before);
     }
+
+    @Test
+    @Disabled
+    public void isAccountActive()
+    {
+
+    }
 }

@@ -2,7 +2,7 @@ package org.xpdojo.bank;
 
 public class account {
 
-    int balance = 100;
+    int balance = -1;
 
     public int getbalance() {
         return balance;
