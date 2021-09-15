@@ -32,6 +32,20 @@ public class AccountTest {
     }
 
     @Test
+    public void canIWithdrawAmount()
+    {
+        account a = new account();
+        int withdraw_amt = 200;
+        int balance_before = 0;
+        int balance_after = 0;
+        balance_before = a.getbalance();
+        a.withdraw(withdraw_amt);
+        balance_after = a.getbalance();
+
+        assertThat(balance_after).isGreaterThanOrEqualTo(0);
+    }
+
+    @Test
     @Disabled
     public void isAccountActive()
     {

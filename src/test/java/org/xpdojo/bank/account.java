@@ -2,10 +2,10 @@ package org.xpdojo.bank;
 
 public class account {
 
-    int balance = -1;
+    int balance = 0;
 
-    public int getbalance() {
-        return balance;
+    public int getbalance(){
+                return balance;
     }
 
     public void deposit(int amt) {
@@ -15,4 +15,7 @@ public class account {
         return balance;
     }
 
+    public void withdraw(int withdraw_amt) {
+        balance = balance - withdraw_amt;
+    }
 }
