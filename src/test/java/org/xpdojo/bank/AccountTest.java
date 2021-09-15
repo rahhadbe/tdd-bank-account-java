@@ -8,8 +8,26 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AccountTest {
 
     @Test
-	@Disabled
-    public void depositAnAmountToIncreaseTheBalance() {
-        assertThat("your first test").isBlank();
+    public void isAccountBalanceGreaterThanZero()
+    {
+        account a = new account();
+        int balance = 0;
+        balance = a.getbalance();
+
+        assertThat(balance).isGreaterThan(0);
+    }
+
+    @Test
+    public void isAccountBalanceGreaterThanBeforeDeposit()
+    {
+        account a = new account();
+        int deposit_amt = 100;
+        int balance_before = 0;
+        int balance_after = 0;
+        balance_before = a.getbalance();
+        a.deposit(deposit_amt);
+        balance_after = a.getbalance();
+
+        assertThat(balance_after).isGreaterThan(balance_before);
     }
 }
