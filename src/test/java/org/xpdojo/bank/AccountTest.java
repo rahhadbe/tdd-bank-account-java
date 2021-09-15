@@ -18,7 +18,7 @@ public class AccountTest {
     }
 
     @Test
-    public void isAccountBalanceGreaterThanBeforeDeposit()
+    public void canIDepositAmount()
     {
         account a = new account();
         int deposit_amt = 100;
@@ -43,6 +43,23 @@ public class AccountTest {
         balance_after = a.getbalance();
 
         assertThat(balance_after).isGreaterThanOrEqualTo(0);
+    }
+
+    @Test
+    public void canITransferAmount()
+    {
+        account a = new account();
+        account b = new account();
+        int deposit_amt = 200;
+        int transfer_amt = 200;
+        a.deposit(200);
+        b.deposit(200);
+        int balance_before = 0;
+        balance_before = b.getbalance();
+        a.transferAmt(b,transfer_amt);
+        int balance_after = 0;
+        balance_after = b.getbalance();
+        assertThat(balance_after).isEqualTo(balance_before+transfer_amt);
     }
 
     @Test

@@ -18,4 +18,8 @@ public class account {
     public void withdraw(int withdraw_amt) {
         balance = balance - withdraw_amt;
     }
+
+    public void transferAmt(account b, int i) {
+        b.deposit(i);
+    }
 }
